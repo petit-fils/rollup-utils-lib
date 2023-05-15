@@ -1,0 +1,12 @@
+import { toString } from './to'
+
+export const isNumber = (v: any): v is number => typeof v === 'number'
+export const isString = (v: unknown): v is string => typeof v === 'string'
+export const isObject = (v: any): v is object => toString(v) === '[object Object]'
+export const isBoolean = (v: any): v is boolean => typeof v === 'boolean'
+export const isFunction = <T extends Function> (v: any): v is T => typeof v === 'function'
+export const isUndefined = (v: any): v is undefined => toString(v) === '[object Undefined]'
+export const isNull = (v: any): v is null => toString(v) === '[object Null]'
+export const isDef = <T = any>(v?: T): v is T => typeof v !== 'undefined'
+export const isRegExp = (v: any): v is RegExp => toString(v) === '[object RegExp]'
+export const isDate = (v: any): v is Date => toString(v) === '[object Date]'
